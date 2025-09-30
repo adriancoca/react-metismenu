@@ -23,6 +23,7 @@ const flattenLevel = (content, parentId) => {
       active: false,
       hasActiveChild: false,
       subMenuVisibility: false,
+      className: item.className || '',
     });
     if (typeof item.content !== 'undefined') {
       flatContent = [
