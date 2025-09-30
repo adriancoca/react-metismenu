@@ -5033,13 +5033,14 @@ var Item = function Item(_ref, _ref2) {
       toggleSubMenu = _ref.toggleSubMenu,
       activateMe = _ref.activateMe,
       reduxStoreName = _ref.reduxStoreName,
-      reduxUid = _ref.reduxUid;
+      reduxUid = _ref.reduxUid,
+      className = _ref.className;
   var classStore = _ref2.classStore,
       LinkComponent = _ref2.LinkComponent;
   return _react2.default.createElement(
     'li',
     {
-      className: (0, _classnames2.default)(classStore.classItem, active && classStore.classItemActive, hasActiveChild && classStore.classItemHasActiveChild, hasSubMenu && subMenuVisibility && classStore.classItemHasVisibleChild)
+      className: (0, _classnames2.default)(classStore.classItem, active && classStore.classItemActive, hasActiveChild && classStore.classItemHasActiveChild, hasSubMenu && subMenuVisibility && classStore.classItemHasVisibleChild, className)
     },
     _react2.default.createElement(
       LinkComponent,
@@ -5077,7 +5078,8 @@ Item.defaultProps = {
   label: '',
   to: null,
   externalLink: false,
-  toggleSubMenu: null
+  toggleSubMenu: null,
+  className: null
 };
 
 Item.propTypes = {
@@ -5093,7 +5095,8 @@ Item.propTypes = {
   toggleSubMenu: _propTypes2.default.func,
   activateMe: _propTypes2.default.func.isRequired,
   reduxStoreName: _propTypes2.default.string.isRequired,
-  reduxUid: _propTypes2.default.number.isRequired
+  reduxUid: _propTypes2.default.number.isRequired,
+  className: _propTypes2.default.string
 };
 
 Item.contextTypes = {
