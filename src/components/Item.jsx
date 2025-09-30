@@ -23,6 +23,7 @@ const Item = ({
   activateMe,
   reduxStoreName,
   reduxUid,
+  className,
 }, {
   classStore,
   LinkComponent,
@@ -33,6 +34,7 @@ const Item = ({
       active && classStore.classItemActive,
       hasActiveChild && classStore.classItemHasActiveChild,
       (hasSubMenu && subMenuVisibility) && classStore.classItemHasVisibleChild,
+      className,
     )}
   >
     <LinkComponent
@@ -77,6 +79,7 @@ Item.defaultProps = {
   to: null,
   externalLink: false,
   toggleSubMenu: null,
+  className: null,
 };
 
 Item.propTypes = {
@@ -100,6 +103,7 @@ Item.propTypes = {
   activateMe: PropTypes.func.isRequired,
   reduxStoreName: PropTypes.string.isRequired,
   reduxUid: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
 
 Item.contextTypes = {
